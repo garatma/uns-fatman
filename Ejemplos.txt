@@ -1,0 +1,15 @@
+1.
+Nombre: Synaptic
+URL: https://www.nongnu.org/synaptic/index.html
+Observaciones: 
+	· Es uno de los manejadores de paquetes gráficos más viejos. Esto, sumado a que funciona en todas las distribuciones basadas en Debian, implica que la gran mayoría de los usuarios de Linux están familiarizados con él.
+	· Estable, rápido, sencilo de usar e intuitivo.
+
+2.
+Nombre: Pamac
+URL: https://wiki.manjaro.org/index.php?title=Pamac
+Observaciones:
+	· Más moderno y atractivo que Synaptic. 
+	· Permite instalar paquetes de repositorios no-oficiales como si lo fueran.
+
+Ambos programas presentan un workflow similar: se elijen los paquetes a desinstalar/actualizar/instalar, se les aplica la operación y se espera a que termine la misma. Son programas de mantenimiento del sistema, no deberían ocupar la atención del usuario/a más que el tiempo necesario para cumplir su función.
