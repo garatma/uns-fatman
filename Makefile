@@ -4,3 +4,6 @@ fatman: main.c
 
 clean:
 	$(RM) fatman
+
+run:
+	./fatman

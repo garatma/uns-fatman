@@ -1,0 +1,4 @@
+Los/as usuarios del sistema son:
+    · Personas que utilizan Arch Linux, ya que en el día a día la necesidad de administrar (instalar, desinstalar y actualizar) paquetes es mayor y no todos los/as usuarios conocen cómo utilizar (ni que existe) el manejador de paquetes de la línea de comando, pacman.
+    · La sintaxis de pacman es extraña y no muy intuitiva. Algunos/as usuarios quizás prefieran utilizar una interfaz gráfica a tener que aprenderla para manejar sus paquetes. 
+    · Aquellas personas que utilizan Arch Linux por trabajo usualmente son desarrolladores/as y probablemente puedan, sepan y prefieran utilizar pacman. Sin embargo, esto no implica que no puedan utilizar el sistema, ya que esta aplicación es una herramienta de mantenimiento y su objetivo es realizar la tarea especificada y nada más, sin derrochar el tiempo de la o del usuario.
