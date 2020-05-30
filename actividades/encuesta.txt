@@ -1,18 +1,18 @@
-Los administradores gráficos de paquetes/programas tienen varios años, aunque sin lugar a duda se hicieron más populares gracias a los teléfonos inteligentes con Android y iOS, con Play Store y App Store como los grandes ejemplos de este tipo de sistema. 
+Los administradores gráficos de programas/paquetes de software tienen varios años, aunque sin lugar a duda se hicieron más populares gracias a los teléfonos inteligentes con Android y iOS, con Play Store y App Store como los grandes ejemplos de este tipo de sistema. 
 Microsoft Store, Mac App Store y las decenas de programas similares en GNU/Linux son ejemplos de estos programas en computadoras de escritorio/laptops.
 
-1. ¿Qué te parece que es más importante a la hora de administrar tus paquetes de software?
-    · Rapidez/eficiencia.
+1. ¿Qué te parece que es más importante a la hora de administrar tus programas?
+    · Rapidez y/o eficiencia en las operaciones solicitadas.
     · Interfaz intuitiva.
     · Apariencia (que se vea lindo).
     · Recomendaciones de aplicaciones nuevas, interesantes o similares a las instaladas.
     · Otro/s:
 
-2. ¿Qué operaciones considerás necesarias en la administración de paquetes?
-    · Instalar paquetes.
-    · Desinstalar paquetes.
-    · Actualizar paquetes.
-    · Buscar/filtrar paquetes.
+2. ¿Qué operaciones considerás necesarias en la administración de programas?
+    · Instalar programas.
+    · Desinstalar programas.
+    · Actualizar programas.
+    · Buscar/filtrar programas.
     · Notificaciones de nuevas actualizaciones.
     · Soporte para la instalación de programas no oficiales.
     · Otra/s:
