@@ -1,5 +1,5 @@
 Los administradores gráficos de programas/paquetes de software tienen varios años, aunque sin lugar a duda se hicieron más populares gracias a los teléfonos inteligentes con Android y iOS, con Play Store y App Store como los grandes ejemplos de este tipo de sistema. 
-Microsoft Store, Mac App Store y las decenas de programas similares en GNU/Linux son ejemplos de estos programas en computadoras de escritorio/laptops.
+Microsoft Store, Mac App Store y las decenas de programas similares en GNU/Linux son ejemplos de estos programas en computadoras personales.
 
 1. ¿Qué te parece que es más importante a la hora de administrar tus programas?
     · Rapidez y/o eficiencia en las operaciones solicitadas.
