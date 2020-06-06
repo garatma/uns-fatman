@@ -1,0 +1,15 @@
+1. 
+    a) Instalar, 
+    b) Desinstalar, 
+    c) Actualizar programas.
+
+2. Buscar/filtrar programas.
+
+3. Recomendaciones de aplicaciones:
+    a) Nuevas, 
+    b) Interesantes, 
+    c) Similares a las instaladas.
+
+4. Notificaciones de nuevas actualizaciones.
+
+5. Soporte para la instalación de programas no oficiales.
