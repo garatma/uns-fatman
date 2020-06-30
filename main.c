@@ -1,23 +1,20 @@
 #include <gtk/gtk.h>
+#define ARCHIVO_GLADE "prototipo.glade"
 
-void print() { printf("Hola!!\n"); }
-
-void on_activate(GtkApplication * app)
+int main(int argc, char *argv[])
 {
-  // Create a new window
-  GtkWidget * window = gtk_application_window_new(app);
-  // Create a new button
-  GtkWidget * button = gtk_button_new_with_label("Hello, World!");
-  // When the button is clicked, destroy the window passed as an argument
-  g_signal_connect(button, "clicked", G_CALLBACK(print), window);
-  gtk_container_add(GTK_CONTAINER(window), button);
-  gtk_widget_show_all(window);
-}
+    gtk_init(&argc, &argv);
 
-int main(int argc, char * argv[])
-{
-  // Create a new application
-  GtkApplication * app = gtk_application_new("com.example.GtkApplication", G_APPLICATION_FLAGS_NONE);
-  g_signal_connect(app, "activate", G_CALLBACK(on_activate), NULL);
-  return g_application_run(G_APPLICATION(app), argc, argv);
+    GtkBuilder * constructor = gtk_builder_new();
+    gtk_builder_add_from_file(constructor, ARCHIVO_GLADE, NULL);
+
+    GtkWidget * ventana = GTK_WIDGET(gtk_builder_get_object(constructor, "ventana"));
+
+    gtk_builder_connect_signals(constructor, NULL);
+
+    g_object_unref(constructor);
+
+    gtk_widget_show(ventana);
+    gtk_main();
+    return 0;
 }
