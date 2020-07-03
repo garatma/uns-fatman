@@ -7,9 +7,6 @@
 #define PASSWORD "1234"
 #define CANTIDAD_INTENTOS 3
 
-/* TODO: mostrar mensaje de error si: */
-/*          - no eligen nada y eligen [des]instalar */
-
 int paquetes_instalados [CANTIDAD_PAQUETES];
 int semaforo = 0, intentos = 0, soporte_no_oficial = 0;
 double valor_barra_progreso = 0;
