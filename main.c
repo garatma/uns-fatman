@@ -8,8 +8,7 @@
 #define CANTIDAD_INTENTOS 3
 
 /* TODO: mostrar mensaje de error si: */
-/*     - no clickean nada y eligen [des]instalar */
-/*     - clickean buscar (principal y resultados) sin poner ninguna cadena de texto */
+/*          - no eligen nada y eligen [des]instalar */
 
 int paquetes_instalados [CANTIDAD_PAQUETES];
 int semaforo = 0, intentos = 0, soporte_no_oficial = 0;
@@ -31,6 +30,7 @@ GtkLabel * campo_intentos, * exito_fallo_operacion, * tipo_operacion;
 
 /* entry */
 GtkEntry * password;
+GtkSearchEntry * paquete_a_buscar_busqueda, * paquete_a_buscar_principal;
 
 /* progress bar */
 GtkProgressBar * barra_progreso;
@@ -78,15 +78,47 @@ void limpiar_ventana_password()
 
 void instalar()
 {
-    
+    int instalar = 0;
+    for (int i = 0; i < CANTIDAD_PAQUETES; ++i) {
+        if (!paquetes_instalados[i] && gtk_toggle_button_get_active((GtkToggleButton *) checkbuttons[i])) {
+            paquetes_instalados[i] = 1;
+            instalar = 1;
+        }
+    }
+    gtk_widget_hide(ventana_principal);
+    if (instalar) {
+        strcpy(operacion_actual, "Instalando...");
+        gtk_label_set_text(exito_fallo_operacion, "Instalación finalizada con éxito.");
+        gtk_widget_show(ventana_password);
+    }
+    else {
+        gtk_label_set_text(exito_fallo_operacion, "No eligió paquetes a instalar.");
+        gtk_widget_show(ventana_operacion_finalizada);
+    }
 }
 
 void desinstalar()
 {
-    strcpy(operacion_actual, "Desinstalando...");
+    int desinstalar = 0;
+    for (int i = 0; i < CANTIDAD_PAQUETES; ++i) {
+        if (paquetes_instalados[i] && gtk_toggle_button_get_inconsistent((GtkToggleButton *) checkbuttons[i])) {
+            paquetes_instalados[i] = 0;
+            gtk_toggle_button_set_inconsistent((GtkToggleButton *) checkbuttons[i], FALSE);
+            gtk_toggle_button_set_active((GtkToggleButton *) checkbuttons[i], FALSE);
+            desinstalar = 1;
+        }
+    }
     gtk_widget_hide(ventana_principal);
-    gtk_widget_show(ventana_password);
-    gtk_entry_set_text(password, "");
+    if (desinstalar) {
+        strcpy(operacion_actual, "Desinstalando...");
+        gtk_label_set_text(exito_fallo_operacion, "Desinstalación finalizada con éxito.");
+        gtk_widget_show(ventana_password);
+    }
+    else {
+        gtk_label_set_text(exito_fallo_operacion, "No eligió paquetes a eliminar.");
+        gtk_widget_show(ventana_operacion_finalizada);
+    }
+
 }
 
 void recomendaciones()
@@ -98,7 +130,15 @@ void recomendaciones()
 void buscar()
 {
     gtk_widget_hide(ventana_principal);
-    gtk_widget_show(ventana_busqueda);
+    gtk_widget_hide(ventana_busqueda);
+    if (!strlen(gtk_entry_get_text((GtkEntry *) paquete_a_buscar_busqueda)) && !strlen(gtk_entry_get_text((GtkEntry *) paquete_a_buscar_principal))) {
+        gtk_label_set_text(exito_fallo_operacion, "Debe ingresar el nombre del paquete a buscar.");
+        gtk_widget_show(ventana_operacion_finalizada);
+    }
+    else 
+        gtk_widget_show(ventana_busqueda);
+    gtk_entry_set_text((GtkEntry *) paquete_a_buscar_principal, "");
+    gtk_entry_set_text((GtkEntry *) paquete_a_buscar_busqueda, "");
 }
 
 void actualizar()
@@ -210,6 +250,13 @@ void inicializar_checkbuttons(GtkBuilder * constructor)
     }
 }
 
+void inicializar_entries(GtkBuilder * constructor)
+{
+    paquete_a_buscar_busqueda = (GtkSearchEntry *) GTK_WIDGET(gtk_builder_get_object(constructor, "paquete_a_buscar_busqueda"));
+    paquete_a_buscar_principal = (GtkSearchEntry *) GTK_WIDGET(gtk_builder_get_object(constructor, "paquete_a_buscar_principal"));
+    password = (GtkEntry *) GTK_WIDGET(gtk_builder_get_object(constructor, "password"));
+}
+
 int main(int argc, char *argv[])
 {
     gtk_init(&argc, &argv);
@@ -220,13 +267,15 @@ int main(int argc, char *argv[])
     inicializar_ventanas(constructor);
     inicializar_checkbuttons(constructor);
     inicializar_labels(constructor);
+    inicializar_entries(constructor);
 
-    password = (GtkEntry *) GTK_WIDGET(gtk_builder_get_object(constructor, "password"));
     barra_progreso = (GtkProgressBar *) GTK_WIDGET(gtk_builder_get_object(constructor, "barra_progreso"));
     boton_no_oficial = (GtkButton *) GTK_WIDGET(gtk_builder_get_object(constructor, "boton_no_oficial"));
 
     /* conectar señales */
     gtk_builder_add_callback_symbol(constructor, "actualizar", actualizar);
+    gtk_builder_add_callback_symbol(constructor, "instalar", instalar);
+    gtk_builder_add_callback_symbol(constructor, "desinstalar", desinstalar);
     gtk_builder_add_callback_symbol(constructor, "checked", (GCallback) checked);
     gtk_builder_add_callback_symbol(constructor, "password_ingresada", password_ingresada);
     gtk_builder_add_callback_symbol(constructor, "volver_menu_principal", volver_menu_principal);

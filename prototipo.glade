@@ -53,6 +53,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+                <signal name="clicked" handler="buscar" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -61,13 +62,14 @@
               </packing>
             </child>
             <child>
-              <object class="GtkSearchEntry">
+              <object class="GtkSearchEntry" id="paquete_a_buscar_busqueda">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="primary_icon_name">edit-find-symbolic</property>
                 <property name="primary_icon_activatable">False</property>
                 <property name="primary_icon_sensitive">False</property>
                 <property name="placeholder_text" translatable="yes">Paquete a buscar</property>
+                <signal name="activate" handler="buscar" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -737,6 +739,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+                <signal name="clicked" handler="instalar" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -750,6 +753,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+                <signal name="clicked" handler="desinstalar" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">False</property>
