@@ -8,7 +8,7 @@
 #define CANTIDAD_INTENTOS 3
 
 int paquetes_instalados [CANTIDAD_PAQUETES];
-int semaforo = 0, intentos = 0, soporte_no_oficial = 0;
+int semaforo = 0, intentos = 0, soporte_no_oficial = 0, paquete_protegido = CANTIDAD_PAQUETES-1;
 double valor_barra_progreso = 0;
 char operacion_actual [LONGITUD_CADENA];
 
@@ -40,7 +40,7 @@ void no_oficial()
         gtk_label_set_text(exito_fallo_operacion, "Se estableció el soporte para paquetes no-oficiales.");
     soporte_no_oficial = !soporte_no_oficial;
     strcpy(operacion_actual, "No-oficial...");
-    gtk_widget_hide(ventana_principal);
+    gtk_widget_set_sensitive((GtkWidget *) ventana_principal, FALSE);
     gtk_widget_show(ventana_password);
 }
 
@@ -82,7 +82,7 @@ void instalar()
             instalar = 1;
         }
     }
-    gtk_widget_hide(ventana_principal);
+    gtk_widget_set_sensitive((GtkWidget *) ventana_principal, FALSE);
     if (instalar) {
         strcpy(operacion_actual, "Instalando...");
         gtk_label_set_text(exito_fallo_operacion, "Instalación finalizada con éxito.");
@@ -98,14 +98,10 @@ void desinstalar()
 {
     int desinstalar = 0;
     for (int i = 0; i < CANTIDAD_PAQUETES; ++i) {
-        if (paquetes_instalados[i] && gtk_toggle_button_get_inconsistent((GtkToggleButton *) checkbuttons[i])) {
-            paquetes_instalados[i] = 0;
-            gtk_toggle_button_set_inconsistent((GtkToggleButton *) checkbuttons[i], FALSE);
-            gtk_toggle_button_set_active((GtkToggleButton *) checkbuttons[i], FALSE);
+        if (paquetes_instalados[i] && gtk_toggle_button_get_inconsistent((GtkToggleButton *) checkbuttons[i]))
             desinstalar = 1;
-        }
     }
-    gtk_widget_hide(ventana_principal);
+    gtk_widget_set_sensitive((GtkWidget *) ventana_principal, FALSE);
     if (desinstalar) {
         strcpy(operacion_actual, "Desinstalando...");
         gtk_label_set_text(exito_fallo_operacion, "Desinstalación finalizada con éxito.");
@@ -126,14 +122,15 @@ void recomendaciones()
 
 void buscar()
 {
-    gtk_widget_hide(ventana_principal);
-    gtk_widget_hide(ventana_busqueda);
     if (!strlen(gtk_entry_get_text((GtkEntry *) paquete_a_buscar_busqueda)) && !strlen(gtk_entry_get_text((GtkEntry *) paquete_a_buscar_principal))) {
+        gtk_widget_set_sensitive((GtkWidget *) ventana_principal, FALSE);
         gtk_label_set_text(exito_fallo_operacion, "Debe ingresar el nombre del paquete a buscar.");
         gtk_widget_show(ventana_operacion_finalizada);
     }
-    else 
+    else {
+        gtk_widget_hide(ventana_principal);
         gtk_widget_show(ventana_busqueda);
+    }
     gtk_entry_set_text((GtkEntry *) paquete_a_buscar_principal, "");
     gtk_entry_set_text((GtkEntry *) paquete_a_buscar_busqueda, "");
 }
@@ -142,7 +139,8 @@ void actualizar()
 {
     strcpy(operacion_actual, "Actualizando...");
     gtk_label_set_text(exito_fallo_operacion, "Actualización finalizada con éxito.");
-    gtk_widget_hide(ventana_principal);
+    /* gtk_widget_hide(ventana_principal); */
+    gtk_widget_set_sensitive((GtkWidget *) ventana_principal, FALSE);
     gtk_widget_show(ventana_password);
 }
 
@@ -181,6 +179,34 @@ void volver_menu_principal()
     gtk_widget_hide(ventana_recomendaciones);
     gtk_widget_hide(ventana_busqueda);
     gtk_widget_show(ventana_principal);
+    gtk_widget_set_sensitive((GtkWidget *) ventana_principal, TRUE);
+}
+
+void control_paquete_protegido()
+{
+    printf("control\n");
+    if (paquetes_instalados[paquete_protegido] && gtk_toggle_button_get_inconsistent((GtkToggleButton *) checkbuttons[paquete_protegido])) {
+        printf("protegido\n");
+        /* tratando de eliminar el paquete protegido */
+        gtk_label_set_text(exito_fallo_operacion, "No puede eliminar paquetes protegidos.");
+        gtk_toggle_button_set_active((GtkToggleButton *) checkbuttons[paquete_protegido], TRUE);
+        gtk_toggle_button_set_inconsistent((GtkToggleButton *) checkbuttons[paquete_protegido], FALSE);
+        gtk_widget_show(ventana_operacion_finalizada);
+    }
+    else {
+        printf("todo bien\n");
+        for (int i = 0; i < CANTIDAD_PAQUETES; ++i) {
+            if (paquetes_instalados[i] && gtk_toggle_button_get_inconsistent((GtkToggleButton *) checkbuttons[i])) {
+                printf("eliminar paquete %i\n", i);
+                paquetes_instalados[i] = 0;
+                gtk_toggle_button_set_inconsistent((GtkToggleButton *) checkbuttons[i], FALSE);
+                gtk_toggle_button_set_active((GtkToggleButton *) checkbuttons[i], FALSE);
+            }
+        }
+        gtk_label_set_text(tipo_operacion, operacion_actual);
+        gtk_widget_show(ventana_progreso);
+        progreso();
+    }
 }
 
 void password_ingresada()
@@ -211,9 +237,12 @@ void password_ingresada()
             gtk_widget_show(ventana_operacion_finalizada);
         }
         else {
-            gtk_label_set_text(tipo_operacion, operacion_actual);
-            gtk_widget_show(ventana_progreso);
-            progreso();
+            if (!strcmp(operacion_actual, "Desinstalando...")) control_paquete_protegido();
+            else {
+                gtk_label_set_text(tipo_operacion, operacion_actual);
+                gtk_widget_show(ventana_progreso);
+                progreso();
+            }
         }
         limpiar_ventana_password();
     }
