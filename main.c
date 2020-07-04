@@ -6,14 +6,14 @@
 #define CANTIDAD_PAQUETES 10
 #define PASSWORD "1234"
 #define CANTIDAD_INTENTOS 3
+#define TIEMPO_ENTRE_ACTUALIZACIONES 5
 
 int paquetes_instalados [CANTIDAD_PAQUETES];
-int semaforo = 0, intentos = 0, soporte_no_oficial = 0, paquete_protegido = CANTIDAD_PAQUETES-1;
-double valor_barra_progreso = 0;
+int semaforo = 0, intentos = 0, soporte_no_oficial = 0, paquete_protegido = CANTIDAD_PAQUETES-1, decidio = 0, ventana_principal_visible_activa = 1, a_actualizar = 0;
 char operacion_actual [LONGITUD_CADENA];
 
 /* ventanas */
-GtkWidget * ventana_principal, * ventana_busqueda, * ventana_recomendaciones, * ventana_operacion_finalizada, * ventana_password, * ventana_progreso;
+GtkWidget * ventana_principal, * ventana_busqueda, * ventana_recomendaciones, * ventana_operacion_finalizada, * ventana_password, * ventana_progreso, * ventana_notificacion;
 
 /* checkbuttons */
 GtkCheckButton * checkbuttons [CANTIDAD_PAQUETES];
@@ -41,6 +41,7 @@ void no_oficial()
     soporte_no_oficial = !soporte_no_oficial;
     strcpy(operacion_actual, "No-oficial...");
     gtk_widget_set_sensitive((GtkWidget *) ventana_principal, FALSE);
+    ventana_principal_visible_activa = 0;
     gtk_widget_show(ventana_password);
 }
 
@@ -83,6 +84,7 @@ void instalar()
         }
     }
     gtk_widget_set_sensitive((GtkWidget *) ventana_principal, FALSE);
+    ventana_principal_visible_activa = 0;
     if (instalar) {
         strcpy(operacion_actual, "Instalando...");
         gtk_label_set_text(exito_fallo_operacion, "Instalación finalizada con éxito.");
@@ -102,6 +104,7 @@ void desinstalar()
             desinstalar = 1;
     }
     gtk_widget_set_sensitive((GtkWidget *) ventana_principal, FALSE);
+    ventana_principal_visible_activa = 0;
     if (desinstalar) {
         strcpy(operacion_actual, "Desinstalando...");
         gtk_label_set_text(exito_fallo_operacion, "Desinstalación finalizada con éxito.");
@@ -117,6 +120,7 @@ void desinstalar()
 void recomendaciones()
 {
     gtk_widget_hide(ventana_principal);
+    ventana_principal_visible_activa = 0;
     gtk_widget_show(ventana_recomendaciones);
 }
 
@@ -124,11 +128,13 @@ void buscar()
 {
     if (!strlen(gtk_entry_get_text((GtkEntry *) paquete_a_buscar_busqueda)) && !strlen(gtk_entry_get_text((GtkEntry *) paquete_a_buscar_principal))) {
         gtk_widget_set_sensitive((GtkWidget *) ventana_principal, FALSE);
+        ventana_principal_visible_activa = 0;
         gtk_label_set_text(exito_fallo_operacion, "Debe ingresar el nombre del paquete a buscar.");
         gtk_widget_show(ventana_operacion_finalizada);
     }
     else {
         gtk_widget_hide(ventana_principal);
+        ventana_principal_visible_activa = 0;
         gtk_widget_show(ventana_busqueda);
     }
     gtk_entry_set_text((GtkEntry *) paquete_a_buscar_principal, "");
@@ -137,10 +143,12 @@ void buscar()
 
 void actualizar()
 {
+    if (a_actualizar) decidio = 1;
     strcpy(operacion_actual, "Actualizando...");
     gtk_label_set_text(exito_fallo_operacion, "Actualización finalizada con éxito.");
-    /* gtk_widget_hide(ventana_principal); */
     gtk_widget_set_sensitive((GtkWidget *) ventana_principal, FALSE);
+    ventana_principal_visible_activa = 0;
+    gtk_widget_hide(ventana_notificacion);
     gtk_widget_show(ventana_password);
 }
 
@@ -153,24 +161,34 @@ int * progreso_cien(void * arg)
 
 void * simular_barra_progreso(void * arg)
 {
+    printf("hilo progreso\n");
     struct timespec ts;
     ts.tv_nsec = 1000000000;
     ts.tv_nsec = 10000000;
     ts.tv_sec = 0;
-    for (valor_barra_progreso = 0; valor_barra_progreso <= 1; valor_barra_progreso += 0.01) {
+    for (double i = 0; i <= 1; i += 0.01) {
         nanosleep(&ts, NULL);
-        gtk_progress_bar_set_fraction(barra_progreso, valor_barra_progreso);
+        gtk_progress_bar_set_fraction(barra_progreso, i);
     }
-    valor_barra_progreso = 0;
     gdk_threads_add_idle((GSourceFunc) progreso_cien, NULL);
-    pthread_exit(NULL);
+    pthread_exit(EXIT_SUCCESS);
 }
 
 void progreso()
 {
+    printf("progreso\n");
     gtk_progress_bar_set_fraction(barra_progreso, 0);
     pthread_t hilo_barra_progreso;
     pthread_create(&hilo_barra_progreso, NULL, simular_barra_progreso, NULL);
+}
+
+void control_actualizaciones()
+{
+    if (a_actualizar) {
+        a_actualizar = 0;
+        gtk_widget_set_sensitive((GtkWidget *) ventana_principal, FALSE);
+        gtk_widget_show(ventana_notificacion);
+    }
 }
 
 void volver_menu_principal()
@@ -180,6 +198,8 @@ void volver_menu_principal()
     gtk_widget_hide(ventana_busqueda);
     gtk_widget_show(ventana_principal);
     gtk_widget_set_sensitive((GtkWidget *) ventana_principal, TRUE);
+    ventana_principal_visible_activa = 1;
+    control_actualizaciones();
 }
 
 void control_paquete_protegido()
@@ -258,6 +278,7 @@ void inicializar_labels(GtkBuilder * constructor)
 void inicializar_ventanas(GtkBuilder * constructor)
 {
     ventana_principal = GTK_WIDGET(gtk_builder_get_object(constructor, "ventana_principal"));
+    ventana_notificacion = GTK_WIDGET(gtk_builder_get_object(constructor, "ventana_notificacion"));
     ventana_busqueda = GTK_WIDGET(gtk_builder_get_object(constructor, "ventana_busqueda"));
     ventana_recomendaciones = GTK_WIDGET(gtk_builder_get_object(constructor, "ventana_recomendaciones"));
     ventana_operacion_finalizada = GTK_WIDGET(gtk_builder_get_object(constructor, "ventana_operacion_finalizada"));
@@ -265,7 +286,7 @@ void inicializar_ventanas(GtkBuilder * constructor)
     ventana_progreso = GTK_WIDGET(gtk_builder_get_object(constructor, "ventana_progreso"));
 }
 
-void inicializar_checkbuttons(GtkBuilder * constructor)
+void inicializar_botones(GtkBuilder * constructor)
 {
     char nombre [LONGITUD_CADENA];
     for (int i = 0; i < CANTIDAD_PAQUETES; ++i) {
@@ -274,6 +295,7 @@ void inicializar_checkbuttons(GtkBuilder * constructor)
         if (gtk_toggle_button_get_active((GtkToggleButton *) checkbuttons[i]))
             paquetes_instalados[i] = 1;
     }
+    boton_no_oficial = (GtkButton *) GTK_WIDGET(gtk_builder_get_object(constructor, "boton_no_oficial"));
 }
 
 void inicializar_entries(GtkBuilder * constructor)
@@ -283,21 +305,44 @@ void inicializar_entries(GtkBuilder * constructor)
     password = (GtkEntry *) GTK_WIDGET(gtk_builder_get_object(constructor, "password"));
 }
 
-int main(int argc, char *argv[])
+void notificacion_actualizacion()
 {
-    gtk_init(&argc, &argv);
+    /* printf("callback\n"); */
+    /* esperar mientras la pantalla principal no sea visible o no se pueda interactuar con ella */
+    gtk_widget_set_sensitive((GtkWidget *) ventana_principal, FALSE);
+    ventana_principal_visible_activa = 0;
+    gtk_widget_show(ventana_notificacion);
+}
 
-    GtkBuilder * constructor = gtk_builder_new();
-    gtk_builder_add_from_file(constructor, ARCHIVO_GLADE, NULL);
+void no_actualizar()
+{
+    decidio = 1;
+    gtk_widget_hide(ventana_notificacion);
+    gtk_widget_set_sensitive((GtkWidget *) ventana_principal, TRUE);
+    ventana_principal_visible_activa = 1;
+    control_actualizaciones();
+}
 
-    inicializar_ventanas(constructor);
-    inicializar_checkbuttons(constructor);
-    inicializar_labels(constructor);
-    inicializar_entries(constructor);
+void * timer_actualizaciones(void * arg)
+{
+    while (1) {
+        sleep(TIEMPO_ENTRE_ACTUALIZACIONES);
+        a_actualizar = 1;
+        printf("a actualizar\n");
+        printf("esperando por decision\n");
+        while (!decidio);
+        printf("listo\n");
+        decidio = 0;
+        /* printf("esperando por ventana principal\n"); */
+        /* while (!ventana_principal_visible_activa); */
+        /* printf("llamando callback\n"); */
+        /* gdk_threads_add_idle((GSourceFunc) notificacion_actualizacion, NULL); */
+        /* printf("esperando a una decisión\n"); */
+    }
+}
 
-    barra_progreso = (GtkProgressBar *) GTK_WIDGET(gtk_builder_get_object(constructor, "barra_progreso"));
-    boton_no_oficial = (GtkButton *) GTK_WIDGET(gtk_builder_get_object(constructor, "boton_no_oficial"));
-
+void conectar_signals(GtkBuilder * constructor)
+{
     /* conectar señales */
     gtk_builder_add_callback_symbol(constructor, "actualizar", actualizar);
     gtk_builder_add_callback_symbol(constructor, "instalar", instalar);
@@ -308,12 +353,34 @@ int main(int argc, char *argv[])
     gtk_builder_add_callback_symbol(constructor, "no_oficial", no_oficial);
     gtk_builder_add_callback_symbol(constructor, "recomendaciones", recomendaciones);
     gtk_builder_add_callback_symbol(constructor, "buscar", buscar);
-
+    gtk_builder_add_callback_symbol(constructor, "no_actualizar", no_actualizar);
     gtk_builder_connect_signals(constructor, NULL);
+}
+
+int main(int argc, char *argv[])
+{
+    gtk_init(&argc, &argv);
+
+    GtkBuilder * constructor = gtk_builder_new();
+    gtk_builder_add_from_file(constructor, ARCHIVO_GLADE, NULL);
+
+    inicializar_ventanas(constructor);
+    inicializar_botones(constructor);
+    inicializar_labels(constructor);
+    inicializar_entries(constructor);
+
+    barra_progreso = (GtkProgressBar *) GTK_WIDGET(gtk_builder_get_object(constructor, "barra_progreso"));
+
+    conectar_signals(constructor);
 
     g_object_unref(constructor);
 
     gtk_widget_show(ventana_principal);
+    ventana_principal_visible_activa = 1;
+
+    pthread_t hilo_timer_actualizaciones;
+    pthread_create(&hilo_timer_actualizaciones, NULL, timer_actualizaciones, NULL);
+
     gtk_main();
     return 0;
 }
