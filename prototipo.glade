@@ -584,7 +584,7 @@
   </object>
   <object class="GtkWindow" id="ventana_notificacion">
     <property name="can_focus">False</property>
-    <property name="title" translatable="yes">Fatman - operación finalizada</property>
+    <property name="title" translatable="yes">Fatman - notificación actualizaciones</property>
     <property name="default_width">300</property>
     <property name="default_height">150</property>
     <property name="icon_name">applications-other</property>

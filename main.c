@@ -6,7 +6,7 @@
 #define CANTIDAD_PAQUETES 10
 #define PASSWORD "1234"
 #define CANTIDAD_INTENTOS 3
-#define TIEMPO_ENTRE_ACTUALIZACIONES 5
+#define TIEMPO_ENTRE_ACTUALIZACIONES 60
 
 int paquetes_instalados [CANTIDAD_PAQUETES];
 int semaforo = 0, intentos = 0, soporte_no_oficial = 0, paquete_protegido = CANTIDAD_PAQUETES-1, decidio = 0, ventana_principal_visible_activa = 1, a_actualizar = 0;
@@ -161,7 +161,6 @@ int * progreso_cien(void * arg)
 
 void * simular_barra_progreso(void * arg)
 {
-    printf("hilo progreso\n");
     struct timespec ts;
     ts.tv_nsec = 1000000000;
     ts.tv_nsec = 10000000;
@@ -176,7 +175,6 @@ void * simular_barra_progreso(void * arg)
 
 void progreso()
 {
-    printf("progreso\n");
     gtk_progress_bar_set_fraction(barra_progreso, 0);
     pthread_t hilo_barra_progreso;
     pthread_create(&hilo_barra_progreso, NULL, simular_barra_progreso, NULL);
@@ -204,9 +202,7 @@ void volver_menu_principal()
 
 void control_paquete_protegido()
 {
-    printf("control\n");
     if (paquetes_instalados[paquete_protegido] && gtk_toggle_button_get_inconsistent((GtkToggleButton *) checkbuttons[paquete_protegido])) {
-        printf("protegido\n");
         /* tratando de eliminar el paquete protegido */
         gtk_label_set_text(exito_fallo_operacion, "No puede eliminar paquetes protegidos.");
         gtk_toggle_button_set_active((GtkToggleButton *) checkbuttons[paquete_protegido], TRUE);
@@ -214,10 +210,8 @@ void control_paquete_protegido()
         gtk_widget_show(ventana_operacion_finalizada);
     }
     else {
-        printf("todo bien\n");
         for (int i = 0; i < CANTIDAD_PAQUETES; ++i) {
             if (paquetes_instalados[i] && gtk_toggle_button_get_inconsistent((GtkToggleButton *) checkbuttons[i])) {
-                printf("eliminar paquete %i\n", i);
                 paquetes_instalados[i] = 0;
                 gtk_toggle_button_set_inconsistent((GtkToggleButton *) checkbuttons[i], FALSE);
                 gtk_toggle_button_set_active((GtkToggleButton *) checkbuttons[i], FALSE);
@@ -307,7 +301,6 @@ void inicializar_entries(GtkBuilder * constructor)
 
 void notificacion_actualizacion()
 {
-    /* printf("callback\n"); */
     /* esperar mientras la pantalla principal no sea visible o no se pueda interactuar con ella */
     gtk_widget_set_sensitive((GtkWidget *) ventana_principal, FALSE);
     ventana_principal_visible_activa = 0;
@@ -328,16 +321,8 @@ void * timer_actualizaciones(void * arg)
     while (1) {
         sleep(TIEMPO_ENTRE_ACTUALIZACIONES);
         a_actualizar = 1;
-        printf("a actualizar\n");
-        printf("esperando por decision\n");
         while (!decidio);
-        printf("listo\n");
         decidio = 0;
-        /* printf("esperando por ventana principal\n"); */
-        /* while (!ventana_principal_visible_activa); */
-        /* printf("llamando callback\n"); */
-        /* gdk_threads_add_idle((GSourceFunc) notificacion_actualizacion, NULL); */
-        /* printf("esperando a una decisión\n"); */
     }
 }
 
