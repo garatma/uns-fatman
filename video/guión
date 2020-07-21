@@ -1,10 +1,30 @@
 mostrar:
-    · instalar (con y sin elegir paquetes)
-    · desinstalar (con, sin y eligiendo un paquete protegido)
-    · actualizar (errar contraseña 1 y 3 veces)
-    · buscar paquete (no poner nada tanto en menú principal como en pantalla de resultados)
-    · recomendaciones
-    · no-oficial (va a andar bien siempre)
-    · notificaciones en algún momento
+	· instalar (con y sin elegir paquetes)
+	· desinstalar (con, sin y eligiendo un paquete protegido)
+	· actualizar (errar contraseña 1 y 3 veces)
+	· buscar paquete (no poner nada tanto en menú principal como en pantalla de resultados)
+	· recomendaciones
+	· no-oficial (va a andar bien siempre)
+	· notificaciones en algún momento
 
-explicar:
+instalar
+	esta es la pantalla principal. podemos ver la lista de paquetes disponibles. podemos seleccionar aquellos que queramos instalar. ingresamos la contraseña de adminsitrador y el sistema procede a instalar lo que elegimos. así es como se instalan los paquetes. podemos
+	si no seleccionamos ningún paquete, vamos a obtener un error, obviamente.
+
+desinstalar
+	ahora procedemos a desinstalar paquetes. como hicimos antes, elegimos los paquetes que queremos desinstalar, clickeamos en el botón, ingresamos la contraseña de administrador y listo. sin embargo, hay ciertos paquetes protegidos por el sistema que no van a poder eliminarse. si tratamos, vamos a ver que obtenemos un error.
+
+actualizar
+	en cualquier tipo de operación, si no ingresamos la contraseña de administrador, nos va a tirar error. tenemos tres intentos para ingresar la contraseña correcta. si llegamos a tres, la operación se cancela.
+
+notificación/actualizar
+	de vez en cuando el sistema verifica si hay actualizaciones disponibles. si las hay, como ahora, se pregunta al usuario si quiere actualizar ahora o no. esto es exactamente lo mismo que si clickeamos en el botón actualizar.
+
+buscar
+	para buscar paquetes tenemos que ingresar una cadena de texto aquí. si no ingresamos nada, el sistema va a reportar un error. una vez que ingresamos un paquete a buscar, los resultados se muestran de esta forma.
+
+recomendaciones
+	volvemos atrás y mostramos la funcionalidad de recomendaciones que funciona de una manera muy similar. simplemente tocamos el botón recomendaciones, que muestra paquetes sugeridos, que se muestran de la siguiente manera.
+
+no-oficial
+	por último mostramos el soporte para instalar paquetes no-oficiales. simplemente clickeamos el botón, ingresamos la contraseña y listo, el sistema verifica que se cumplan los requisitos y agrega el soporte. en esta computadora los requisitos se cumplen entonces la operación es exitosa.
