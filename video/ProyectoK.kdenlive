@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<mlt title="Anonymous Submission" LC_NUMERIC="fr_FR.UTF-8" producer="main_bin" version="6.20.0" root="/home/manuel/Syncthing/files/uns/2020/ihc/video">
- <profile frame_rate_num="30" sample_aspect_num="1" display_aspect_den="906" colorspace="709" progressive="1" description="808x906 30.00fps" display_aspect_num="808" frame_rate_den="1" width="808" height="906" sample_aspect_den="1"/>
- <producer id="producer0" in="00:00:00,000" out="00:00:10,300">
-  <property name="length">310</property>
+<mlt title="Anonymous Submission" LC_NUMERIC="es_AR.UTF-8" producer="main_bin" version="6.20.0" root="/home/manuel/Syncthing/files/uns/2020/ihc/video">
+ <profile frame_rate_num="30" sample_aspect_num="1" display_aspect_den="9" colorspace="709" progressive="1" description="HD 1080p 30 fps" display_aspect_num="16" frame_rate_den="1" width="1920" height="1080" sample_aspect_den="1"/>
+ <producer id="producer1" in="00:00:00,000" out="00:00:10,300">
+  <property name="length">00:00:10,333</property>
   <property name="eof">pause</property>
   <property name="resource">fatty.jpg</property>
   <property name="ttl">25</property>
@@ -18,8 +18,9 @@
   <property name="kdenlive:file_size">77050</property>
   <property name="kdenlive:file_hash">f375e6527aac9abcf433ee7fa12f8bf8</property>
   <property name="kdenlive:folderid">-1</property>
+  <property name="global_feed">1</property>
  </producer>
- <producer id="producer1" in="00:00:00,000" out="00:00:10,600">
+ <producer id="producer0" in="00:00:00,000" out="00:00:10,600">
   <property name="length">319</property>
   <property name="eof">pause</property>
   <property name="resource"/>
@@ -44,8 +45,9 @@ GTK front-end para Pacman&lt;/content>
 </property>
   <property name="kdenlive:folderid">-1</property>
   <property name="kdenlive:id">3</property>
-  <property name="kdenlive:file_hash">049667e892602c7f8a611437c84b0e21</property>
+  <property name="kdenlive:file_hash">d7b7961b3e5fa28370533c6984026637</property>
   <property name="force_reload">0</property>
+  <property name="global_feed">1</property>
   <property name="meta.media.width">808</property>
   <property name="meta.media.height">906</property>
  </producer>
@@ -82,8 +84,8 @@ GTK front-end para Pacman&lt;/content>
   <property name="kdenlive:file_hash">cb32dd04290ec9be43a3ddc5f0354edd</property>
   <property name="global_feed">1</property>
  </producer>
- <producer id="producer3" in="00:00:00,000" out="00:00:12,500">
-  <property name="length">376</property>
+ <producer id="producer7" in="00:00:00,000" out="00:00:12,500">
+  <property name="length">00:00:12,533</property>
   <property name="eof">pause</property>
   <property name="resource">Proyecto_assets/title/TitleFileName-2.svg</property>
   <property name="ttl">25</property>
@@ -99,11 +101,24 @@ GTK front-end para Pacman&lt;/content>
   <property name="kdenlive:id">5</property>
   <property name="kdenlive:file_size">18414</property>
   <property name="kdenlive:file_hash">82add5de1ceb31d26e2395ebda073113</property>
+  <property name="global_feed">1</property>
  </producer>
- <producer title="Anonymous Submission" id="producer4" in="00:00:00,000" out="00:03:56,200">
+ <producer id="producer3" in="00:00:00,000" out="00:03:56,200">
   <property name="length">7087</property>
   <property name="eof">pause</property>
   <property name="resource">/home/manuel/2020-07-21 15-29-14.mkv</property>
+  <property name="audio_index">1</property>
+  <property name="video_index">0</property>
+  <property name="mute_on_pause">0</property>
+  <property name="mlt_service">avformat-novalidate</property>
+  <property name="seekable">1</property>
+  <property name="aspect_ratio">1</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">6</property>
+  <property name="kdenlive:file_size">7376913</property>
+  <property name="kdenlive:file_hash">9921d260c88603010f15f16eef92fa97</property>
+  <property name="global_feed">1</property>
   <property name="meta.media.nb_streams">2</property>
   <property name="meta.media.0.stream.type">video</property>
   <property name="meta.media.0.stream.frame_rate">30</property>
@@ -129,16 +144,8 @@ GTK front-end para Pacman&lt;/content>
   <property name="meta.attr.1.stream.title.markup">simple_aac_recording</property>
   <property name="meta.attr.1.stream.DURATION.markup">00:03:56.054000000</property>
   <property name="meta.attr.ENCODER.markup">Lavf58.45.100</property>
-  <property name="seekable">1</property>
   <property name="meta.media.sample_aspect_num">1</property>
   <property name="meta.media.sample_aspect_den">1</property>
-  <property name="aspect_ratio">1</property>
-  <property name="audio_index">1</property>
-  <property name="video_index">0</property>
-  <property name="mute_on_pause">0</property>
-  <property name="mlt_service">avformat-novalidate</property>
-  <property name="kdenlive:clipname"/>
-  <property name="kdenlive:folderid">-1</property>
   <property name="meta.media.frame_rate_num">30</property>
   <property name="meta.media.frame_rate_den">1</property>
   <property name="meta.media.colorspace">601</property>
@@ -146,14 +153,8 @@ GTK front-end para Pacman&lt;/content>
   <property name="meta.media.width">816</property>
   <property name="meta.media.height">460</property>
   <property name="meta.media.color_range">mpeg</property>
-  <property name="kdenlive:id">8</property>
-  <property name="kdenlive:file_size">7376913</property>
-  <property name="kdenlive:file_hash">9921d260c88603010f15f16eef92fa97</property>
-  <property name="meta.media.top_field_first">0</property>
-  <property name="meta.media.progressive">1</property>
-  <property name="global_feed">1</property>
  </producer>
- <producer title="Anonymous Submission" id="producer5" in="00:00:00,000" out="00:03:56,100">
+ <producer title="Anonymous Submission" id="producer4" in="00:00:00,000" out="00:03:56,100">
   <property name="length">7084</property>
   <property name="eof">pause</property>
   <property name="resource">/home/manuel/audio.mp3</property>
@@ -173,10 +174,112 @@ GTK front-end para Pacman&lt;/content>
   <property name="mlt_service">avformat</property>
   <property name="kdenlive:clipname"/>
   <property name="kdenlive:folderid">-1</property>
-  <property name="kdenlive:id">9</property>
+  <property name="kdenlive:id">7</property>
   <property name="kdenlive:file_size">5498636</property>
   <property name="kdenlive:file_hash">234e27ab1a8a8109bccd4f2d270b5dd9</property>
   <property name="global_feed">1</property>
+ </producer>
+ <producer title="Anonymous Submission" id="producer6" in="00:00:00,000" out="00:03:11,600">
+  <property name="length">5749</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/manuel/2020-07-21 20-44-04.mkv</property>
+  <property name="audio_index">1</property>
+  <property name="video_index">0</property>
+  <property name="mute_on_pause">0</property>
+  <property name="mlt_service">avformat-novalidate</property>
+  <property name="seekable">1</property>
+  <property name="aspect_ratio">1</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">8</property>
+  <property name="kdenlive:file_size">8096205</property>
+  <property name="kdenlive:file_hash">1be71f73ca33f7376249380b3ac74ead</property>
+  <property name="global_feed">1</property>
+  <property name="meta.media.nb_streams">2</property>
+  <property name="meta.media.0.stream.type">video</property>
+  <property name="meta.media.0.stream.frame_rate">30</property>
+  <property name="meta.media.0.stream.sample_aspect_ratio">0</property>
+  <property name="meta.media.0.codec.width">1920</property>
+  <property name="meta.media.0.codec.height">1080</property>
+  <property name="meta.media.0.codec.rotate">0</property>
+  <property name="meta.media.0.codec.frame_rate">30</property>
+  <property name="meta.media.0.codec.pix_fmt">yuv420p</property>
+  <property name="meta.media.0.codec.sample_aspect_ratio">0</property>
+  <property name="meta.media.0.codec.colorspace">709</property>
+  <property name="meta.media.0.codec.name">h264</property>
+  <property name="meta.media.0.codec.long_name">H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10</property>
+  <property name="meta.media.0.codec.bit_rate">0</property>
+  <property name="meta.attr.0.stream.DURATION.markup">00:03:11.633000000</property>
+  <property name="meta.media.1.stream.type">audio</property>
+  <property name="meta.media.1.codec.sample_fmt">fltp</property>
+  <property name="meta.media.1.codec.sample_rate">44100</property>
+  <property name="meta.media.1.codec.channels">2</property>
+  <property name="meta.media.1.codec.name">aac</property>
+  <property name="meta.media.1.codec.long_name">AAC (Advanced Audio Coding)</property>
+  <property name="meta.media.1.codec.bit_rate">0</property>
+  <property name="meta.attr.1.stream.title.markup">simple_aac_recording</property>
+  <property name="meta.attr.1.stream.DURATION.markup">00:03:11.495000000</property>
+  <property name="meta.attr.ENCODER.markup">Lavf58.45.100</property>
+  <property name="meta.media.sample_aspect_num">1</property>
+  <property name="meta.media.sample_aspect_den">1</property>
+  <property name="meta.media.frame_rate_num">30</property>
+  <property name="meta.media.frame_rate_den">1</property>
+  <property name="meta.media.colorspace">709</property>
+  <property name="meta.media.color_trc">2</property>
+  <property name="meta.media.width">1920</property>
+  <property name="meta.media.height">1080</property>
+  <property name="meta.media.color_range">mpeg</property>
+ </producer>
+ <producer title="Anonymous Submission" id="producer5" in="00:00:00,000" out="00:03:51,667">
+  <property name="length">6951</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/manuel/2020-07-21 22-30-56.mkv</property>
+  <property name="audio_index">1</property>
+  <property name="video_index">0</property>
+  <property name="mute_on_pause">0</property>
+  <property name="mlt_service">avformat-novalidate</property>
+  <property name="seekable">1</property>
+  <property name="aspect_ratio">1</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">9</property>
+  <property name="kdenlive:file_size">13043515</property>
+  <property name="kdenlive:file_hash">a1d16419ee8422a3239f222f328a264d</property>
+  <property name="global_feed">1</property>
+  <property name="meta.media.nb_streams">2</property>
+  <property name="meta.media.0.stream.type">video</property>
+  <property name="meta.media.0.stream.frame_rate">30</property>
+  <property name="meta.media.0.stream.sample_aspect_ratio">0</property>
+  <property name="meta.media.0.codec.width">1920</property>
+  <property name="meta.media.0.codec.height">1080</property>
+  <property name="meta.media.0.codec.rotate">0</property>
+  <property name="meta.media.0.codec.frame_rate">30</property>
+  <property name="meta.media.0.codec.pix_fmt">yuv420p</property>
+  <property name="meta.media.0.codec.sample_aspect_ratio">0</property>
+  <property name="meta.media.0.codec.colorspace">709</property>
+  <property name="meta.media.0.codec.name">h264</property>
+  <property name="meta.media.0.codec.long_name">H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10</property>
+  <property name="meta.media.0.codec.bit_rate">0</property>
+  <property name="meta.attr.0.stream.DURATION.markup">00:03:51.700000000</property>
+  <property name="meta.media.1.stream.type">audio</property>
+  <property name="meta.media.1.codec.sample_fmt">fltp</property>
+  <property name="meta.media.1.codec.sample_rate">44100</property>
+  <property name="meta.media.1.codec.channels">2</property>
+  <property name="meta.media.1.codec.name">aac</property>
+  <property name="meta.media.1.codec.long_name">AAC (Advanced Audio Coding)</property>
+  <property name="meta.media.1.codec.bit_rate">0</property>
+  <property name="meta.attr.1.stream.title.markup">simple_aac_recording</property>
+  <property name="meta.attr.1.stream.DURATION.markup">00:03:51.549000000</property>
+  <property name="meta.attr.ENCODER.markup">Lavf58.45.100</property>
+  <property name="meta.media.sample_aspect_num">1</property>
+  <property name="meta.media.sample_aspect_den">1</property>
+  <property name="meta.media.frame_rate_num">30</property>
+  <property name="meta.media.frame_rate_den">1</property>
+  <property name="meta.media.colorspace">709</property>
+  <property name="meta.media.color_trc">2</property>
+  <property name="meta.media.width">1920</property>
+  <property name="meta.media.height">1080</property>
+  <property name="meta.media.color_range">mpeg</property>
  </producer>
  <playlist id="main_bin">
   <property name="kdenlive:docproperties.activeTrack">2</property>
@@ -194,52 +297,54 @@ GTK front-end para Pacman&lt;/content>
 ]
 </property>
   <property name="kdenlive:docproperties.kdenliveversion">20.04.3</property>
-  <property name="kdenlive:docproperties.position">313</property>
+  <property name="kdenlive:docproperties.position">506</property>
   <property name="kdenlive:docproperties.previewextension"/>
   <property name="kdenlive:docproperties.previewparameters"/>
-  <property name="kdenlive:docproperties.profile">/home/manuel/.local/share/kdenlive/profiles/customprofile0</property>
+  <property name="kdenlive:docproperties.profile">atsc_1080p_30</property>
   <property name="kdenlive:docproperties.proxyextension"/>
   <property name="kdenlive:docproperties.proxyimageminsize">2000</property>
   <property name="kdenlive:docproperties.proxyimagesize">800</property>
   <property name="kdenlive:docproperties.proxyminsize">1000</property>
   <property name="kdenlive:docproperties.proxyparams"/>
-  <property name="kdenlive:docproperties.scrollPos">681</property>
-  <property name="kdenlive:docproperties.seekOffset">30000</property>
-  <property name="kdenlive:docproperties.version">0.99</property>
-  <property name="kdenlive:docproperties.verticalzoom">1</property>
-  <property name="kdenlive:docproperties.videoTarget">2</property>
-  <property name="kdenlive:docproperties.zonein">0</property>
-  <property name="kdenlive:docproperties.zoneout">75</property>
-  <property name="kdenlive:docproperties.zoom">5</property>
-  <property name="kdenlive:documentnotes"/>
-  <property name="kdenlive:docproperties.renderaudioquality">6</property>
+  <property name="kdenlive:docproperties.renderaudioquality">192</property>
   <property name="kdenlive:docproperties.rendercategory">Generic (HD for web, mobile devices...)</property>
   <property name="kdenlive:docproperties.renderendguide">-1</property>
   <property name="kdenlive:docproperties.renderexportaudio">0</property>
   <property name="kdenlive:docproperties.renderfield">0</property>
   <property name="kdenlive:docproperties.renderguide">0</property>
   <property name="kdenlive:docproperties.renderplay">0</property>
-  <property name="kdenlive:docproperties.renderprofile">WebM - the widespread free format (VP8/Vorbis)</property>
+  <property name="kdenlive:docproperties.renderprofile">MP4 - the dominating format (H264/AAC)</property>
   <property name="kdenlive:docproperties.renderquality">23</property>
   <property name="kdenlive:docproperties.renderratio">1</property>
   <property name="kdenlive:docproperties.renderrescale">0</property>
   <property name="kdenlive:docproperties.renderrescaleheight">453</property>
-  <property name="kdenlive:docproperties.renderrescalewidth">404</property>
+  <property name="kdenlive:docproperties.renderrescalewidth">805</property>
   <property name="kdenlive:docproperties.renderscanning">0</property>
   <property name="kdenlive:docproperties.renderspeed">2</property>
   <property name="kdenlive:docproperties.renderstartguide">-1</property>
   <property name="kdenlive:docproperties.rendertcoverlay">0</property>
   <property name="kdenlive:docproperties.rendertctype">0</property>
   <property name="kdenlive:docproperties.rendertwopass">0</property>
-  <property name="kdenlive:docproperties.renderurl">/home/manuel/Videos/ProyectoK.webm</property>
+  <property name="kdenlive:docproperties.renderurl">/home/manuel/Videos/ProyectoK.mp4</property>
   <property name="kdenlive:docproperties.renderzone">0</property>
+  <property name="kdenlive:docproperties.scrollPos">0</property>
+  <property name="kdenlive:docproperties.seekOffset">30000</property>
+  <property name="kdenlive:docproperties.version">0.99</property>
+  <property name="kdenlive:docproperties.verticalzoom">1</property>
+  <property name="kdenlive:docproperties.videoTarget">-1</property>
+  <property name="kdenlive:docproperties.zonein">0</property>
+  <property name="kdenlive:docproperties.zoneout">75</property>
+  <property name="kdenlive:docproperties.zoom">11</property>
+  <property name="kdenlive:documentnotes"/>
   <property name="xml_retain">1</property>
-  <entry producer="producer0" in="00:00:00,000" out="00:00:10,300"/>
-  <entry producer="producer1" in="00:00:00,000" out="00:00:10,600"/>
+  <entry producer="producer1" in="00:00:00,000" out="00:00:10,300"/>
+  <entry producer="producer0" in="00:00:00,000" out="00:00:10,600"/>
   <entry producer="producer2" in="00:00:00,000" out="00:02:16,600"/>
-  <entry producer="producer3" in="00:00:00,000" out="00:00:04,967"/>
-  <entry producer="producer4" in="00:00:00,000" out="00:03:56,200"/>
-  <entry producer="producer5" in="00:00:00,000" out="00:03:56,100"/>
+  <entry producer="producer7" in="00:00:00,000" out="00:00:12,500"/>
+  <entry producer="producer3" in="00:00:00,000" out="00:03:56,200"/>
+  <entry producer="producer4" in="00:00:00,000" out="00:03:56,100"/>
+  <entry producer="producer6" in="00:00:00,000" out="00:03:11,600"/>
+  <entry producer="producer5" in="00:00:00,000" out="00:03:51,667"/>
  </playlist>
  <producer id="black_track" in="00:00:00,000" out="00:19:37,633">
   <property name="length">2147483647</property>
@@ -250,10 +355,14 @@ GTK front-end para Pacman&lt;/content>
   <property name="mlt_image_format">rgb24a</property>
   <property name="set.test_audio">0</property>
  </producer>
- <producer title="Anonymous Submission" id="producer6" in="00:00:00,000" out="00:02:16,600">
+ <producer title="Anonymous Submission" id="producer8" in="00:00:00,000" out="00:02:16,600">
   <property name="length">4099</property>
   <property name="eof">pause</property>
   <property name="resource">Sneaky Snitch.mp3</property>
+  <property name="audio_index">0</property>
+  <property name="video_index">-1</property>
+  <property name="mute_on_pause">0</property>
+  <property name="mlt_service">avformat-novalidate</property>
   <property name="meta.media.nb_streams">1</property>
   <property name="meta.media.0.stream.type">audio</property>
   <property name="meta.media.0.codec.sample_fmt">fltp</property>
@@ -272,10 +381,6 @@ GTK front-end para Pacman&lt;/content>
   <property name="meta.attr.title.markup">Sneaky Snitch</property>
   <property name="meta.attr.date.markup">2010</property>
   <property name="seekable">1</property>
-  <property name="audio_index">0</property>
-  <property name="video_index">-1</property>
-  <property name="mute_on_pause">0</property>
-  <property name="mlt_service">avformat-novalidate</property>
   <property name="kdenlive:clipname"/>
   <property name="kdenlive:folderid">-1</property>
   <property name="kdenlive:id">4</property>
@@ -288,10 +393,8 @@ GTK front-end para Pacman&lt;/content>
  </producer>
  <playlist id="playlist0">
   <property name="kdenlive:audio_track">1</property>
-  <property name="kdenlive:activeeffect">0</property>
-  <entry producer="producer6" in="00:00:00,000" out="00:02:12,367">
+  <entry producer="producer8" in="00:00:00,000" out="00:02:12,367">
    <property name="kdenlive:id">4</property>
-   <property name="kdenlive:activeeffect">0</property>
    <filter id="filter0">
     <property name="window">75</property>
     <property name="max_gain">20dB</property>
@@ -301,9 +404,8 @@ GTK front-end para Pacman&lt;/content>
     <property name="kdenlive:collapsed">0</property>
    </filter>
   </entry>
-  <entry producer="producer6" in="00:00:55,100" out="00:01:40,300">
+  <entry producer="producer8" in="00:00:55,100" out="00:01:40,300">
    <property name="kdenlive:id">4</property>
-   <property name="kdenlive:activeeffect">0</property>
    <filter id="filter1">
     <property name="window">75</property>
     <property name="max_gain">20dB</property>
@@ -352,10 +454,14 @@ GTK front-end para Pacman&lt;/content>
    <property name="disable">1</property>
   </filter>
  </tractor>
- <producer title="Anonymous Submission" id="producer7" in="00:00:00,000" out="00:03:56,100">
+ <producer title="Anonymous Submission" id="producer9" in="00:00:00,000" out="00:03:56,100">
   <property name="length">7084</property>
   <property name="eof">pause</property>
   <property name="resource">/home/manuel/audio.mp3</property>
+  <property name="audio_index">0</property>
+  <property name="video_index">-1</property>
+  <property name="mute_on_pause">0</property>
+  <property name="mlt_service">avformat-novalidate</property>
   <property name="meta.media.nb_streams">1</property>
   <property name="meta.media.0.stream.type">audio</property>
   <property name="meta.media.0.codec.sample_fmt">fltp</property>
@@ -366,13 +472,9 @@ GTK front-end para Pacman&lt;/content>
   <property name="meta.media.0.codec.bit_rate">186299</property>
   <property name="meta.attr.0.stream.encoder.markup">LAME3.100</property>
   <property name="seekable">1</property>
-  <property name="audio_index">0</property>
-  <property name="video_index">-1</property>
-  <property name="mute_on_pause">0</property>
-  <property name="mlt_service">avformat-novalidate</property>
   <property name="kdenlive:clipname"/>
   <property name="kdenlive:folderid">-1</property>
-  <property name="kdenlive:id">9</property>
+  <property name="kdenlive:id">7</property>
   <property name="kdenlive:file_size">5498636</property>
   <property name="kdenlive:file_hash">234e27ab1a8a8109bccd4f2d270b5dd9</property>
   <property name="global_feed">1</property>
@@ -381,48 +483,41 @@ GTK front-end para Pacman&lt;/content>
   <property name="set.test_image">1</property>
  </producer>
  <playlist id="playlist2">
-  <blank length="00:00:11,167"/>
-  <entry producer="producer7" in="00:00:18,633" out="00:00:33,167">
-   <property name="kdenlive:id">9</property>
-  </entry>
-  <entry producer="producer7" in="00:00:34,233" out="00:00:50,033">
-   <property name="kdenlive:id">9</property>
-  </entry>
-  <entry producer="producer7" in="00:00:55,267" out="00:01:16,700">
-   <property name="kdenlive:id">9</property>
-  </entry>
-  <entry producer="producer7" in="00:01:22,033" out="00:01:23,700">
-   <property name="kdenlive:id">9</property>
-  </entry>
-  <entry producer="producer7" in="00:01:49,200" out="00:01:56,667">
-   <property name="kdenlive:id">9</property>
-  </entry>
-  <entry producer="producer7" in="00:02:04,767" out="00:02:25,633">
-   <property name="kdenlive:id">9</property>
-  </entry>
-  <entry producer="producer7" in="00:02:28,833" out="00:02:45,800">
-   <property name="kdenlive:id">9</property>
-  </entry>
-  <entry producer="producer7" in="00:02:46,800" out="00:02:55,067">
-   <property name="kdenlive:id">9</property>
-  </entry>
-  <entry producer="producer7" in="00:02:56,200" out="00:03:02,467">
-   <property name="kdenlive:id">9</property>
-  </entry>
-  <entry producer="producer7" in="00:03:02,867" out="00:03:16,333">
-   <property name="kdenlive:id">9</property>
-  </entry>
-  <entry producer="producer7" in="00:03:22,233" out="00:03:49,567">
-   <property name="kdenlive:id">9</property>
-  </entry>
- </playlist>
- <playlist id="playlist3"/>
- <tractor id="tractor1" in="00:00:00,000" out="00:02:45,567">
   <property name="kdenlive:audio_track">1</property>
-  <property name="kdenlive:trackheight">69</property>
-  <property name="kdenlive:timeline_active">1</property>
-  <track hide="both" producer="playlist2"/>
-  <track hide="both" producer="playlist3"/>
+  <blank length="00:00:11,167"/>
+  <entry producer="producer9" in="00:00:18,633" out="00:00:33,167">
+   <property name="kdenlive:id">7</property>
+  </entry>
+  <entry producer="producer9" in="00:00:34,233" out="00:00:50,033">
+   <property name="kdenlive:id">7</property>
+  </entry>
+  <entry producer="producer9" in="00:00:55,267" out="00:01:16,700">
+   <property name="kdenlive:id">7</property>
+  </entry>
+  <entry producer="producer9" in="00:01:22,033" out="00:01:23,700">
+   <property name="kdenlive:id">7</property>
+  </entry>
+  <entry producer="producer9" in="00:01:49,200" out="00:01:56,667">
+   <property name="kdenlive:id">7</property>
+  </entry>
+  <entry producer="producer9" in="00:02:04,767" out="00:02:25,633">
+   <property name="kdenlive:id">7</property>
+  </entry>
+  <entry producer="producer9" in="00:02:28,833" out="00:02:45,800">
+   <property name="kdenlive:id">7</property>
+  </entry>
+  <entry producer="producer9" in="00:02:46,800" out="00:02:55,067">
+   <property name="kdenlive:id">7</property>
+  </entry>
+  <entry producer="producer9" in="00:02:56,200" out="00:03:02,467">
+   <property name="kdenlive:id">7</property>
+  </entry>
+  <entry producer="producer9" in="00:03:02,867" out="00:03:16,333">
+   <property name="kdenlive:id">7</property>
+  </entry>
+  <entry producer="producer9" in="00:03:22,233" out="00:03:48,700">
+   <property name="kdenlive:id">7</property>
+  </entry>
   <filter id="filter6">
    <property name="window">75</property>
    <property name="max_gain">20dB</property>
@@ -437,16 +532,27 @@ GTK front-end para Pacman&lt;/content>
    <property name="start">0,5</property>
    <property name="disable">1</property>
   </filter>
+ </playlist>
+ <playlist id="playlist3"/>
+ <tractor id="tractor1" in="00:00:00,000" out="00:02:44,700">
+  <property name="kdenlive:audio_track">1</property>
+  <property name="kdenlive:trackheight">69</property>
+  <property name="kdenlive:collapsed">0</property>
+  <property name="kdenlive:thumbs_format"/>
+  <property name="kdenlive:audio_rec"/>
+  <property name="kdenlive:timeline_active">1</property>
+  <track hide="video" producer="playlist2"/>
+  <track hide="both" producer="playlist3"/>
   <filter id="filter8">
    <property name="iec_scale">0</property>
    <property name="mlt_service">audiolevel</property>
    <property name="disable">1</property>
   </filter>
  </tractor>
- <producer title="Anonymous Submission" id="producer8" in="00:00:00,000" out="00:03:56,200">
-  <property name="length">7087</property>
+ <producer title="Anonymous Submission" id="producer10" in="00:00:00,000" out="00:03:11,600">
+  <property name="length">5749</property>
   <property name="eof">pause</property>
-  <property name="resource">/home/manuel/2020-07-21 15-29-14.mkv</property>
+  <property name="resource">/home/manuel/2020-07-21 20-44-04.mkv</property>
   <property name="audio_index">1</property>
   <property name="video_index">0</property>
   <property name="mute_on_pause">0</property>
@@ -456,25 +562,25 @@ GTK front-end para Pacman&lt;/content>
   <property name="kdenlive:clipname"/>
   <property name="kdenlive:folderid">-1</property>
   <property name="kdenlive:id">8</property>
-  <property name="kdenlive:file_size">7376913</property>
-  <property name="kdenlive:file_hash">9921d260c88603010f15f16eef92fa97</property>
+  <property name="kdenlive:file_size">8096205</property>
+  <property name="kdenlive:file_hash">1be71f73ca33f7376249380b3ac74ead</property>
   <property name="global_feed">1</property>
   <property name="xml">was here</property>
   <property name="meta.media.nb_streams">2</property>
   <property name="meta.media.0.stream.type">video</property>
   <property name="meta.media.0.stream.frame_rate">30</property>
   <property name="meta.media.0.stream.sample_aspect_ratio">0</property>
-  <property name="meta.media.0.codec.width">816</property>
-  <property name="meta.media.0.codec.height">460</property>
+  <property name="meta.media.0.codec.width">1920</property>
+  <property name="meta.media.0.codec.height">1080</property>
   <property name="meta.media.0.codec.rotate">0</property>
   <property name="meta.media.0.codec.frame_rate">30</property>
   <property name="meta.media.0.codec.pix_fmt">yuv420p</property>
   <property name="meta.media.0.codec.sample_aspect_ratio">0</property>
-  <property name="meta.media.0.codec.colorspace">601</property>
+  <property name="meta.media.0.codec.colorspace">709</property>
   <property name="meta.media.0.codec.name">h264</property>
   <property name="meta.media.0.codec.long_name">H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10</property>
   <property name="meta.media.0.codec.bit_rate">0</property>
-  <property name="meta.attr.0.stream.DURATION.markup">00:03:56.233000000</property>
+  <property name="meta.attr.0.stream.DURATION.markup">00:03:11.633000000</property>
   <property name="meta.media.1.stream.type">audio</property>
   <property name="meta.media.1.codec.sample_fmt">fltp</property>
   <property name="meta.media.1.codec.sample_rate">44100</property>
@@ -483,78 +589,262 @@ GTK front-end para Pacman&lt;/content>
   <property name="meta.media.1.codec.long_name">AAC (Advanced Audio Coding)</property>
   <property name="meta.media.1.codec.bit_rate">0</property>
   <property name="meta.attr.1.stream.title.markup">simple_aac_recording</property>
-  <property name="meta.attr.1.stream.DURATION.markup">00:03:56.054000000</property>
+  <property name="meta.attr.1.stream.DURATION.markup">00:03:11.495000000</property>
   <property name="meta.attr.ENCODER.markup">Lavf58.45.100</property>
   <property name="meta.media.sample_aspect_num">1</property>
   <property name="meta.media.sample_aspect_den">1</property>
   <property name="meta.media.frame_rate_num">30</property>
   <property name="meta.media.frame_rate_den">1</property>
-  <property name="meta.media.colorspace">601</property>
+  <property name="meta.media.colorspace">709</property>
   <property name="meta.media.color_trc">2</property>
-  <property name="meta.media.width">816</property>
-  <property name="meta.media.height">460</property>
+  <property name="meta.media.width">1920</property>
+  <property name="meta.media.height">1080</property>
   <property name="meta.media.color_range">mpeg</property>
+  <property name="set.test_audio">1</property>
+  <property name="set.test_image">0</property>
   <property name="meta.media.top_field_first">0</property>
   <property name="meta.media.progressive">1</property>
+ </producer>
+ <producer title="Anonymous Submission" id="producer11" in="00:00:00,000" out="00:03:51,667">
+  <property name="length">6951</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/manuel/2020-07-21 22-30-56.mkv</property>
+  <property name="audio_index">1</property>
+  <property name="video_index">0</property>
+  <property name="mute_on_pause">0</property>
+  <property name="mlt_service">avformat-novalidate</property>
+  <property name="seekable">1</property>
+  <property name="aspect_ratio">1</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">9</property>
+  <property name="kdenlive:file_size">13043515</property>
+  <property name="kdenlive:file_hash">a1d16419ee8422a3239f222f328a264d</property>
+  <property name="global_feed">1</property>
+  <property name="xml">was here</property>
+  <property name="meta.media.nb_streams">2</property>
+  <property name="meta.media.0.stream.type">video</property>
+  <property name="meta.media.0.stream.frame_rate">30</property>
+  <property name="meta.media.0.stream.sample_aspect_ratio">0</property>
+  <property name="meta.media.0.codec.width">1920</property>
+  <property name="meta.media.0.codec.height">1080</property>
+  <property name="meta.media.0.codec.rotate">0</property>
+  <property name="meta.media.0.codec.frame_rate">30</property>
+  <property name="meta.media.0.codec.pix_fmt">yuv420p</property>
+  <property name="meta.media.0.codec.sample_aspect_ratio">0</property>
+  <property name="meta.media.0.codec.colorspace">709</property>
+  <property name="meta.media.0.codec.name">h264</property>
+  <property name="meta.media.0.codec.long_name">H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10</property>
+  <property name="meta.media.0.codec.bit_rate">0</property>
+  <property name="meta.attr.0.stream.DURATION.markup">00:03:51.700000000</property>
+  <property name="meta.media.1.stream.type">audio</property>
+  <property name="meta.media.1.codec.sample_fmt">fltp</property>
+  <property name="meta.media.1.codec.sample_rate">44100</property>
+  <property name="meta.media.1.codec.channels">2</property>
+  <property name="meta.media.1.codec.name">aac</property>
+  <property name="meta.media.1.codec.long_name">AAC (Advanced Audio Coding)</property>
+  <property name="meta.media.1.codec.bit_rate">0</property>
+  <property name="meta.attr.1.stream.title.markup">simple_aac_recording</property>
+  <property name="meta.attr.1.stream.DURATION.markup">00:03:51.549000000</property>
+  <property name="meta.attr.ENCODER.markup">Lavf58.45.100</property>
+  <property name="meta.media.sample_aspect_num">1</property>
+  <property name="meta.media.sample_aspect_den">1</property>
+  <property name="meta.media.frame_rate_num">30</property>
+  <property name="meta.media.frame_rate_den">1</property>
+  <property name="meta.media.colorspace">709</property>
+  <property name="meta.media.color_trc">2</property>
+  <property name="meta.media.width">1920</property>
+  <property name="meta.media.height">1080</property>
+  <property name="meta.media.color_range">mpeg</property>
   <property name="set.test_audio">1</property>
   <property name="set.test_image">0</property>
  </producer>
  <playlist id="playlist4">
-  <entry producer="producer0" in="00:00:00,000" out="00:00:09,667">
-   <property name="kdenlive:id">2</property>
-  </entry>
-  <blank length="00:00:01,467"/>
-  <entry producer="producer8" in="00:00:18,633" out="00:00:33,133">
+  <blank length="00:00:11,167"/>
+  <entry producer="producer10" in="00:00:01,267" out="00:00:30,600">
    <property name="kdenlive:id">8</property>
-   <property name="kdenlive:activeeffect">-1</property>
   </entry>
-  <entry producer="producer8" in="00:00:34,233" out="00:00:50,067">
+  <entry producer="producer10" in="00:00:32,767" out="00:00:35,200">
    <property name="kdenlive:id">8</property>
-   <property name="kdenlive:activeeffect">0</property>
   </entry>
-  <entry producer="producer8" in="00:00:55,300" out="00:01:16,733">
+  <entry producer="producer10" in="00:00:35,233" out="00:00:35,800">
    <property name="kdenlive:id">8</property>
-   <property name="kdenlive:activeeffect">0</property>
   </entry>
-  <entry producer="producer8" in="00:01:22,067" out="00:01:23,733">
+  <entry producer="producer10" in="00:00:35,233" out="00:00:35,800">
    <property name="kdenlive:id">8</property>
-   <property name="kdenlive:activeeffect">0</property>
   </entry>
-  <entry producer="producer8" in="00:01:49,200" out="00:01:56,667">
+  <entry producer="producer10" in="00:00:34,900" out="00:00:35,800">
    <property name="kdenlive:id">8</property>
-   <property name="kdenlive:activeeffect">0</property>
   </entry>
-  <entry producer="producer8" in="00:02:04,767" out="00:02:25,600">
+  <entry producer="producer10" in="00:00:36,400" out="00:01:05,433">
    <property name="kdenlive:id">8</property>
-   <property name="kdenlive:activeeffect">0</property>
   </entry>
-  <entry producer="producer8" in="00:02:28,800" out="00:02:45,800">
+  <entry producer="producer10" in="00:01:41,333" out="00:01:43,167">
    <property name="kdenlive:id">8</property>
-   <property name="kdenlive:activeeffect">0</property>
   </entry>
-  <entry producer="producer8" in="00:02:46,800" out="00:02:55,067">
+  <entry producer="producer10" in="00:01:43,200" out="00:02:23,733">
    <property name="kdenlive:id">8</property>
-   <property name="kdenlive:activeeffect">0</property>
   </entry>
-  <entry producer="producer8" in="00:02:56,200" out="00:03:02,467">
-   <property name="kdenlive:id">8</property>
-   <property name="kdenlive:activeeffect">0</property>
+  <entry producer="producer11" in="00:02:52,633" out="00:03:00,200">
+   <property name="kdenlive:id">9</property>
   </entry>
-  <entry producer="producer8" in="00:03:02,867" out="00:03:16,333">
-   <property name="kdenlive:id">8</property>
-   <property name="kdenlive:activeeffect">0</property>
+  <entry producer="producer11" in="00:03:03,700" out="00:03:03,700">
+   <property name="kdenlive:id">9</property>
   </entry>
-  <entry producer="producer8" in="00:03:22,233" out="00:03:49,567">
-   <property name="kdenlive:id">8</property>
-   <property name="kdenlive:activeeffect">0</property>
+  <entry producer="producer11" in="00:03:03,700" out="00:03:03,700">
+   <property name="kdenlive:id">9</property>
   </entry>
-  <entry producer="producer3" in="00:00:00,000" out="00:00:12,000">
+  <entry producer="producer11" in="00:03:03,700" out="00:03:03,700">
+   <property name="kdenlive:id">9</property>
+  </entry>
+  <entry producer="producer11" in="00:03:03,700" out="00:03:03,700">
+   <property name="kdenlive:id">9</property>
+  </entry>
+  <entry producer="producer11" in="00:03:03,700" out="00:03:03,700">
+   <property name="kdenlive:id">9</property>
+  </entry>
+  <entry producer="producer11" in="00:03:03,700" out="00:03:03,700">
+   <property name="kdenlive:id">9</property>
+  </entry>
+  <entry producer="producer11" in="00:03:03,700" out="00:03:03,700">
+   <property name="kdenlive:id">9</property>
+  </entry>
+  <entry producer="producer11" in="00:03:03,700" out="00:03:03,700">
+   <property name="kdenlive:id">9</property>
+  </entry>
+  <entry producer="producer11" in="00:03:03,700" out="00:03:03,700">
+   <property name="kdenlive:id">9</property>
+  </entry>
+  <entry producer="producer11" in="00:03:03,700" out="00:03:03,700">
+   <property name="kdenlive:id">9</property>
+  </entry>
+  <entry producer="producer11" in="00:03:03,700" out="00:03:03,700">
+   <property name="kdenlive:id">9</property>
+  </entry>
+  <entry producer="producer11" in="00:03:03,700" out="00:03:03,700">
+   <property name="kdenlive:id">9</property>
+  </entry>
+  <entry producer="producer11" in="00:03:03,700" out="00:03:03,700">
+   <property name="kdenlive:id">9</property>
+  </entry>
+  <entry producer="producer11" in="00:03:03,700" out="00:03:03,700">
+   <property name="kdenlive:id">9</property>
+  </entry>
+  <entry producer="producer11" in="00:03:03,700" out="00:03:03,700">
+   <property name="kdenlive:id">9</property>
+  </entry>
+  <entry producer="producer11" in="00:03:03,700" out="00:03:03,700">
+   <property name="kdenlive:id">9</property>
+  </entry>
+  <entry producer="producer11" in="00:03:03,700" out="00:03:03,700">
+   <property name="kdenlive:id">9</property>
+  </entry>
+  <entry producer="producer11" in="00:03:03,633" out="00:03:20,367">
+   <property name="kdenlive:id">9</property>
+  </entry>
+  <entry producer="producer11" in="00:03:20,400" out="00:03:20,600">
+   <property name="kdenlive:id">9</property>
+  </entry>
+  <entry producer="producer11" in="00:03:20,400" out="00:03:20,600">
+   <property name="kdenlive:id">9</property>
+  </entry>
+  <entry producer="producer11" in="00:03:20,400" out="00:03:20,600">
+   <property name="kdenlive:id">9</property>
+  </entry>
+  <entry producer="producer11" in="00:03:20,400" out="00:03:20,600">
+   <property name="kdenlive:id">9</property>
+  </entry>
+  <entry producer="producer11" in="00:03:20,400" out="00:03:20,600">
+   <property name="kdenlive:id">9</property>
+  </entry>
+  <entry producer="producer11" in="00:03:20,400" out="00:03:20,600">
+   <property name="kdenlive:id">9</property>
+  </entry>
+  <entry producer="producer11" in="00:03:20,400" out="00:03:20,600">
+   <property name="kdenlive:id">9</property>
+  </entry>
+  <entry producer="producer11" in="00:03:20,400" out="00:03:20,600">
+   <property name="kdenlive:id">9</property>
+  </entry>
+  <entry producer="producer11" in="00:03:20,400" out="00:03:20,600">
+   <property name="kdenlive:id">9</property>
+  </entry>
+  <entry producer="producer11" in="00:03:20,400" out="00:03:20,600">
+   <property name="kdenlive:id">9</property>
+  </entry>
+  <entry producer="producer11" in="00:03:20,400" out="00:03:20,600">
+   <property name="kdenlive:id">9</property>
+  </entry>
+  <entry producer="producer11" in="00:03:20,400" out="00:03:20,600">
+   <property name="kdenlive:id">9</property>
+  </entry>
+  <entry producer="producer11" in="00:03:20,400" out="00:03:20,600">
+   <property name="kdenlive:id">9</property>
+  </entry>
+  <entry producer="producer11" in="00:03:20,400" out="00:03:20,600">
+   <property name="kdenlive:id">9</property>
+  </entry>
+  <entry producer="producer11" in="00:03:20,400" out="00:03:20,600">
+   <property name="kdenlive:id">9</property>
+  </entry>
+  <entry producer="producer11" in="00:03:20,400" out="00:03:20,600">
+   <property name="kdenlive:id">9</property>
+  </entry>
+  <entry producer="producer11" in="00:03:20,400" out="00:03:20,600">
+   <property name="kdenlive:id">9</property>
+  </entry>
+  <entry producer="producer11" in="00:03:20,400" out="00:03:20,600">
+   <property name="kdenlive:id">9</property>
+  </entry>
+  <entry producer="producer11" in="00:03:20,400" out="00:03:20,600">
+   <property name="kdenlive:id">9</property>
+  </entry>
+  <entry producer="producer11" in="00:03:20,400" out="00:03:20,567">
+   <property name="kdenlive:id">9</property>
+  </entry>
+  <entry producer="producer11" in="00:03:20,600" out="00:03:20,600">
+   <property name="kdenlive:id">9</property>
+  </entry>
+  <entry producer="producer11" in="00:03:20,600" out="00:03:20,600">
+   <property name="kdenlive:id">9</property>
+  </entry>
+  <entry producer="producer11" in="00:03:20,633" out="00:03:20,667">
+   <property name="kdenlive:id">9</property>
+  </entry>
+  <entry producer="producer11" in="00:03:24,633" out="00:03:25,400">
+   <property name="kdenlive:id">9</property>
+  </entry>
+  <entry producer="producer11" in="00:03:25,433" out="00:03:30,700">
+   <property name="kdenlive:id">9</property>
+  </entry>
+  <entry producer="producer11" in="00:03:30,733" out="00:03:31,033">
+   <property name="kdenlive:id">9</property>
+  </entry>
+  <entry producer="producer11" in="00:03:30,733" out="00:03:31,033">
+   <property name="kdenlive:id">9</property>
+  </entry>
+  <entry producer="producer11" in="00:03:30,733" out="00:03:31,033">
+   <property name="kdenlive:id">9</property>
+  </entry>
+  <entry producer="producer11" in="00:03:30,733" out="00:03:31,033">
+   <property name="kdenlive:id">9</property>
+  </entry>
+  <entry producer="producer11" in="00:03:30,733" out="00:03:31,033">
+   <property name="kdenlive:id">9</property>
+  </entry>
+  <entry producer="producer11" in="00:03:30,733" out="00:03:31,033">
+   <property name="kdenlive:id">9</property>
+  </entry>
+  <entry producer="producer11" in="00:03:31,067" out="00:03:42,200">
+   <property name="kdenlive:id">9</property>
+  </entry>
+  <entry producer="producer7" in="00:00:00,000" out="00:00:12,000">
    <property name="kdenlive:id">5</property>
   </entry>
  </playlist>
  <playlist id="playlist5"/>
  <tractor id="tractor2" in="00:00:00,000" out="00:02:57,600">
-  <property name="kdenlive:trackheight">69</property>
+  <property name="kdenlive:trackheight">67</property>
   <property name="kdenlive:collapsed">0</property>
   <property name="kdenlive:thumbs_format"/>
   <property name="kdenlive:audio_rec"/>
@@ -564,7 +854,7 @@ GTK front-end para Pacman&lt;/content>
  </tractor>
  <playlist id="playlist6">
   <entry producer="producer1" in="00:00:00,000" out="00:00:09,667">
-   <property name="kdenlive:id">3</property>
+   <property name="kdenlive:id">2</property>
   </entry>
  </playlist>
  <playlist id="playlist7"/>
@@ -577,12 +867,28 @@ GTK front-end para Pacman&lt;/content>
   <track hide="audio" producer="playlist6"/>
   <track hide="both" producer="playlist7"/>
  </tractor>
- <tractor title="Anonymous Submission" id="tractor4" global_feed="1" in="00:00:00,000" out="00:19:37,633">
+ <playlist id="playlist8">
+  <entry producer="producer0" in="00:00:00,000" out="00:00:09,667">
+   <property name="kdenlive:id">3</property>
+  </entry>
+ </playlist>
+ <playlist id="playlist9"/>
+ <tractor id="tractor4" in="00:00:00,000" out="00:00:09,667">
+  <property name="kdenlive:trackheight">69</property>
+  <property name="kdenlive:collapsed">0</property>
+  <property name="kdenlive:thumbs_format"/>
+  <property name="kdenlive:audio_rec"/>
+  <property name="kdenlive:timeline_active">1</property>
+  <track hide="audio" producer="playlist8"/>
+  <track hide="both" producer="playlist9"/>
+ </tractor>
+ <tractor title="Anonymous Submission" id="tractor5" global_feed="1" in="00:00:00,000" out="00:19:37,633">
   <track producer="black_track"/>
   <track producer="tractor0"/>
   <track producer="tractor1"/>
   <track producer="tractor2"/>
   <track producer="tractor3"/>
+  <track producer="tractor4"/>
   <transition id="transition0">
    <property name="a_track">0</property>
    <property name="b_track">1</property>
@@ -615,6 +921,17 @@ GTK front-end para Pacman&lt;/content>
   <transition id="transition3">
    <property name="a_track">0</property>
    <property name="b_track">4</property>
+   <property name="compositing">0</property>
+   <property name="distort">0</property>
+   <property name="rotate_center">0</property>
+   <property name="mlt_service">qtblend</property>
+   <property name="kdenlive_id">qtblend</property>
+   <property name="internal_added">237</property>
+   <property name="always_active">1</property>
+  </transition>
+  <transition id="transition4">
+   <property name="a_track">0</property>
+   <property name="b_track">5</property>
    <property name="compositing">0</property>
    <property name="distort">0</property>
    <property name="rotate_center">0</property>
