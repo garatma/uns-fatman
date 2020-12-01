@@ -9,7 +9,7 @@ Este repositorio se focaliza en la concepción, diseño (centrado en el/la usuar
 En los distintos directorios se pueden ir viendo las distintas etapas por las cuales pasó el proyecto:
 - Identificar sistemas similares y posibles usuarios
 - Realizar una encuesta para determinar qué es lo que quieren los/as usuarios/as de este tipo de aplicaciones
-- Realizar casos de usos para cada una de las funcionalidades
+- Realizar casos de usos para cada una de las funcionalidades extraídas de la encuesta
 - Representar los casos de usos con diagramas
 - Dibujar las pantallas de la interfaz
 - Implementar un prototipo
