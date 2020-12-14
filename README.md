@@ -4,9 +4,9 @@ Graphical front-end developed in C, GTK, and Glade for Arch Linux's command line
 
 # Details
 
-This project focuses on the conception, design and development of the user interface of the system, based on the input and feedback of the software intended users, without necessarily developing the communication between the GUI and the subjacent command line package manager. It is an example on how to design an application based on the intended users' input and feedback.
+This project focuses on the conception, design, and development of the user interface of the system, based on the input and feedback of the software's intended users, without necessarily developing the communication between the GUI and the subjacent command line package manager. It is an example on how to design an application based on the input and feedback of the intended users'.
 
-Every directory contains a part of the different stages of development of the project:
+Each directory contains a part of the different stages of development of the project:
 - Identify similar software systems and possible users
 - Conduct a survey to determine exactly what functionality the user wants from systems like these
 - Perform use cases for every functionality determined by the users in the survey
