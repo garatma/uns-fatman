@@ -13,4 +13,4 @@ Every directory contains a part of the different stages of development of the pr
 - Make UML diagrams for every use case
 - Sketch the software possible screens, following the UML diagrams
 - Develop the system prototype
-- Lastly, a video (in Spanish) shows the basic functionality of the graphical interface
+- Finally, a video (in Spanish) shows the basic functionality of the graphical interface
