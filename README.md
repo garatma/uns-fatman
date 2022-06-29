@@ -1,6 +1,6 @@
 # Fatman
 
-Graphical front-end developed in C, GTK, and Glade for Arch Linux's command line package manager _pacman_, as part of the activities and project of the course of _Design and Development of Human-Computer Interaction_ of the degree of _Computer Engineering_ in 2020, _Universidad Nacional del Sur_.
+Graphical front-end developed in C and GTK (also Glade) for Arch Linux's command line package manager _pacman_, as part of the activities and project of the course of _Design and Development of Human-Computer Interaction_ of the degree of _Computer Engineering_ in 2020, _Universidad Nacional del Sur_.
 
 # Details
 
